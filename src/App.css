@@ -1,0 +1,37 @@
+.App {
+  background-color: #61dafb;
+  min-height: 100vh;
+  /* font-size: calc(10px + 2vmin); */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.outline {
+  background-color: #fff;
+  max-width: 70%;
+  width: 50%;
+  padding: 20px;
+}
+
+.task_group {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  text-align: center;
+  background-color:bisque;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 3px;
+  margin-top: 5px;
+}
+.task_group button {
+  height: 20px;
+  background: #61dafb;
+}
+
+
+
