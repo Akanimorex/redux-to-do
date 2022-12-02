@@ -1,11 +1,11 @@
 import React from "react";
 
-const Task = () => {
+const Task = ({ received }) => {
     return (
         <div className='task_group'>
-            <p>hello</p>
-            <button>Del</button>
-        </div>
+        <p>{received.task}</p>
+         <button>Del</button>
+       </div>
     )
 };
 
