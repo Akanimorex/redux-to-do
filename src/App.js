@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import {React, useState} from 'react';
+import {React, useState, useRef} from 'react';
 import './App.css';
 import data from "./utis/data.json";
 import Task from './components/Task';
@@ -8,6 +8,8 @@ function App() {
   const [tasks, setTask] = useState(data);
 
   const [userInput, setUserInput ] = useState('');
+  const delRef = useRef();
+
 
   // const data = [];
 
@@ -20,7 +22,20 @@ function App() {
     // setTask(userInput);
     // setUserInput("");
     
+  };
+
+  const delTask = (taskID) => {
+    let copy = [...tasks];
+
+    for (let i=0; i < copy.length; i++) {
+      if (copy[i].id === taskID) {
+           copy.pop(copy[i]);
+           setTask(copy);
+      }
   }
+
+  }
+
   return (
     <div className="App">
       {/* {console.log(data,"DATA")} */}
@@ -34,7 +49,7 @@ function App() {
         // console.log(tasks)
          tasks.map((task)=>{
           return (
-            <Task key={task.id} received={task}/>
+            <Task key={task.id} delTask={delTask} received={task}/>
 
           )
         })

@@ -1,10 +1,15 @@
-import React from "react";
+import { React, useRef } from "react";
 
-const Task = ({ received }) => {
+
+const Task = ({ received , delTask}) => {
+
+
+
+
     return (
         <div className='task_group'>
         <p>{received.task}</p>
-         <button>Del</button>
+         <button onClick={()=> delTask(received.id)}>Del</button>
        </div>
     )
 };
