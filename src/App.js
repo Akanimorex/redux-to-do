@@ -18,7 +18,7 @@ function App() {
     console.log(`printing out this ${userInput}`);
     dispatch(saveToDo(
       {
-        id:Date.now(), task:userInput, complete:false
+        id:todoList.length + 1, task:userInput, complete:false
        }
     ))
   }

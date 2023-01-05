@@ -2,9 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import data from '../utils/data.json';
 
 const initialState = {
-    todoList:[data]
+    todoList: data
 
-}
+};
+
+console.log(data);
 
 const todoSlice = createSlice({
   name: "todos",
