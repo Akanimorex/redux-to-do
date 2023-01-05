@@ -4,7 +4,7 @@ import './App.css';
 import data from './utils/data.json';
 import Task from './components/Task';
 import { useDispatch , useSelector} from 'react-redux';
-import { saveToDo } from './features/todoSlice';
+import { saveToDo, delToDo } from './features/todoSlice';
 import { selectTodoList } from './features/todoSlice';
 
 function App() {
@@ -24,14 +24,17 @@ function App() {
   }
 
   const delTask = (taskID) => {
-    let copy = [...tasks];
+    dispatch(delToDo(taskID))
+  //   let copy = [...tasks];
 
-    for (let i=0; i < copy.length; i++) {
-      if (copy[i].id === taskID) {
-           copy.pop(copy[i]);
-           setTask(copy);
-      }
-  }
+  //   for (let i=0; i < copy.length; i++) {
+  //     if (copy[i].id === taskID) {
+  //          copy.pop(copy[i]);
+  //          setTask(copy);
+  //     }
+  // }
+
+      console.log(taskID, "ID")
 
   };
 
